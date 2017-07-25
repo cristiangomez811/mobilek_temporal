@@ -2,42 +2,33 @@
 include "conexion.php";
 
 $user_id=null;
-$sql1= "select * from person where id = ".$_GET["id"];
+$sql1= "select * from clientes where cedula = ".$_GET["cedula"];
 $query = $con->query($sql1);
 $person = null;
 if($query->num_rows>0){
 while ($r=$query->fetch_object()){
-  $person=$r;
+  $clientes=$r;
   break;
 }
 
   }
 ?>
 
-<?php if($person!=null):?>
+<?php if($clientes!=null):?>
 
 <form role="form" method="post" action="php/actualizar.php">
   <div class="form-group">
-    <label for="name">Nombre</label>
-    <input type="text" class="form-control" value="<?php echo $person->name; ?>" name="name" required>
+    <label for="nombre">Nombre</label>
+    <input type="text" class="form-control" value="<?php echo $clientes->nombre; ?>" name="nombre" required>
   </div>
   <div class="form-group">
-    <label for="lastname">Apellido</label>
-    <input type="text" class="form-control" value="<?php echo $person->lastname; ?>" name="lastname" required>
+    <label for="cedula">Cedula</label>
+    <input type="text" class="form-control" value="<?php echo $clientes->cedula; ?>" name="cedula" required>
   </div>
   <div class="form-group">
-    <label for="address">Domicilio</label>
-    <input type="text" class="form-control" value="<?php echo $person->address; ?>" name="address" required>
+    <label for="telefono">Telefono</label>
+    <input type="text" class="form-control" value="<?php echo $clientes->telefono; ?>" name="telefono" >
   </div>
-  <div class="form-group">
-    <label for="email">Email</label>
-    <input type="email" class="form-control" value="<?php echo $person->email; ?>" name="email" >
-  </div>
-  <div class="form-group">
-    <label for="phone">Telefono</label>
-    <input type="text" class="form-control" value="<?php echo $person->phone; ?>" name="phone" >
-  </div>
-<input type="hidden" name="id" value="<?php echo $person->id; ?>">
   <button type="submit" class="btn btn-default">Actualizar</button>
 </form>
 <?php else:?>

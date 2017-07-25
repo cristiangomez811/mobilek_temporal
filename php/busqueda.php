@@ -3,7 +3,7 @@
 include "conexion.php";
 
 $user_id=null;
-$sql1= "select * from person where name like '%$_GET[s]%' or lastname like '%$_GET[s]%' or address like '%$_GET[s]%' or email like '%$_GET[s]%' or phone like '%$_GET[s]%' ";
+$sql1= "select * from clientes where nombre like '%$_GET[s]%' or cedula like '%$_GET[s]%' or telefono like '%$_GET[s]%'";
 $query = $con->query($sql1);
 ?>
 
@@ -11,19 +11,15 @@ $query = $con->query($sql1);
 <table class="table table-bordered table-hover">
 <thead>
 	<th>Nombre</th>
-	<th>Apellido</th>
-	<th>Email</th>
-	<th>Direccion</th>
+	<th>Cedula</th>
 	<th>Telefono</th>
 	<th></th>
 </thead>
 <?php while ($r=$query->fetch_array()):?>
 <tr>
-	<td><?php echo $r["name"]; ?></td>
-	<td><?php echo $r["lastname"]; ?></td>
-	<td><?php echo $r["email"]; ?></td>
-	<td><?php echo $r["address"]; ?></td>
-	<td><?php echo $r["phone"]; ?></td>
+	<td><?php echo $r["nombre"]; ?></td>
+	<td><?php echo $r["cedula"]; ?></td>
+	<td><?php echo $r["telefono"]; ?></td>
 	<td style="width:150px;">
 		<a href="./editar.php?id=<?php echo $r["id"];?>" class="btn btn-sm btn-warning">Editar</a>
 		<a href="#" id="del-<?php echo $r["id"];?>" class="btn btn-sm btn-danger">Eliminar</a>

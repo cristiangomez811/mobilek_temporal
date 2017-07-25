@@ -11,28 +11,25 @@ $query = $con->query($sql1);
 <table class="table table-bordered table-hover">
 <thead>
 	<th>Nombre</th>
-	<th>Apellido</th>
-	<th>Email</th>
-	<th>Direccion</th>
+	<th>Cedula</th>
 	<th>Telefono</th>
 	<th></th>
 </thead>
 <?php while ($r=$query->fetch_array()):?>
 <tr>
-	<td><?php echo $r["name"]; ?></td>
-	<td><?php echo $r["lastname"]; ?></td>
-	<td><?php echo $r["email"]; ?></td>
-	<td><?php echo $r["address"]; ?></td>
-	<td><?php echo $r["phone"]; ?></td>
-	<td style="width:150px;">
-		<a href="./editar.php?id=<?php echo $r["id"];?>" class="btn btn-sm btn-warning">Editar</a>
-		<a href="#" id="del-<?php echo $r["id"];?>" class="btn btn-sm btn-danger">Eliminar</a>
+	<td><?php echo $r["nombre"]; ?></td>
+	<td><?php echo $r["cedula"]; ?></td>
+	<td><?php echo $r["telefono"]; ?></td>
+
+		<td style="width:150px;">
+		<a href="./editar.php?id=<?php echo $r["cedula"];?>" class="btn btn-sm btn-warning">Editar</a>
+		<a href="#" id="del-<?php echo $r["cedula"];?>" class="btn btn-sm btn-danger">Eliminar</a>
 		<script>
-		$("#del-"+<?php echo $r["id"];?>).click(function(e){
+		$("#del-"+<?php echo $r["cedula"];?>).click(function(e){
 			e.preventDefault();
 			p = confirm("Estas seguro?");
 			if(p){
-				window.location="./php/eliminar.php?id="+<?php echo $r["id"];?>;
+				window.location="./php/eliminar.php?id="+<?php echo $r["cedula"];?>;
 
 			}
 

@@ -10,7 +10,7 @@
 <div class="container">
 <div class="row">
 <div class="col-md-12">
-		<h2>VER ENTRADAS</h2>
+		<h2>CLIENTES</h2>
 <!-- Button trigger modal -->
   <a data-toggle="modal" href="#myModal" class="btn btn-default">Agregar</a>
 <br><br>
@@ -25,24 +25,16 @@
         <div class="modal-body">
 <form role="form" method="post" action="php/agregar.php">
   <div class="form-group">
-    <label for="name">Nombre</label>
-    <input type="text" class="form-control" name="name" required>
+    <label for="nombre">Nombre</label>
+    <input type="text" class="form-control" name="nombre" required>
   </div>
   <div class="form-group">
-    <label for="lastname">Apellido</label>
-    <input type="text" class="form-control" name="lastname" required>
+    <label for="cedula">Cedula</label>
+    <input type="text" class="form-control" name="cedula" required>
   </div>
   <div class="form-group">
-    <label for="address">Domicilio</label>
-    <input type="text" class="form-control" name="address" required>
-  </div>
-  <div class="form-group">
-    <label for="email">Email</label>
-    <input type="email" class="form-control" name="email" >
-  </div>
-  <div class="form-group">
-    <label for="phone">Telefono</label>
-    <input type="text" class="form-control" name="phone" >
+    <label for="telefono">Telefono</label>
+    <input type="text" class="form-control" name="telefono" >
   </div>
 
   <button type="submit" class="btn btn-default">Agregar</button>

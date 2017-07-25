@@ -1,11 +1,11 @@
 <?php
 
 if(!empty($_POST)){
-	if(isset($_POST["name"]) &&isset($_POST["lastname"]) &&isset($_POST["email"]) &&isset($_POST["address"]) &&isset($_POST["phone"])){
-		if($_POST["name"]!=""&& $_POST["lastname"]!=""&&$_POST["address"]!=""){
+	if(isset($_POST["nombre"]) &&isset($_POST["cedula"]) && isset($_POST["telefono"])){
+		if($_POST["nombre"]!=""&& $_POST["cedula"]!=""&&$_POST["telefono"]!=""){
 			include "conexion.php";
-			
-			$sql = "update person set name=\"$_POST[name]\",lastname=\"$_POST[lastname]\",email=\"$_POST[email]\",address=\"$_POST[address]\",phone=\"$_POST[phone]\" where id=".$_POST["id"];
+
+			$sql = "update clientes set name=\"$_POST[nombre]\",cedula=\"$_POST[cedula]\",telefono=\"$_POST[telefon]\" where cedula=".$_POST["cedula"];
 			$query = $con->query($sql);
 			if($query!=null){
 				print "<script>alert(\"Actualizado exitosamente.\");window.location='../ver.php';</script>";
