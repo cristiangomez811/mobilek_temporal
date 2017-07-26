@@ -22,14 +22,14 @@ $query = $con->query($sql1);
 	<td><?php echo $r["telefono"]; ?></td>
 
 		<td style="width:150px;">
-		<a href="./editar.php?id=<?php echo $r["cedula"];?>" class="btn btn-sm btn-warning">Editar</a>
-		<a href="#" id="del-<?php echo $r["cedula"];?>" class="btn btn-sm btn-danger">Eliminar</a>
+		<a href="./editar.php?id=<?php echo $r["id"];?>" class="btn btn-sm btn-warning">Editar</a>
+		<a href="#" id="del-<?php echo $r["id"];?>" class="btn btn-sm btn-danger">Eliminar</a>
 		<script>
-		$("#del-"+<?php echo $r["cedula"];?>).click(function(e){
+		$("#del-"+<?php echo $r["id"];?>).click(function(e){
 			e.preventDefault();
 			p = confirm("Estas seguro?");
 			if(p){
-				window.location="./php/eliminar.php?id="+<?php echo $r["cedula"];?>;
+				window.location="./php/eliminar.php?id="+<?php echo $r["id"];?>;
 
 			}
 
