@@ -6,7 +6,7 @@
 		<script src="js/jquery.min.js"></script>
 	</head>
 	<body>
-	<?php include "php/navbar.php"; ?>
+	<?php include "php/clientesModels/navbarClientes.php"; ?>
 <div class="container">
 <div class="row">
 <div class="col-md-12">
@@ -23,7 +23,7 @@
           <h4 class="modal-title">Agregar</h4>
         </div>
         <div class="modal-body">
-<form role="form" method="post" action="php/agregar.php">
+<form role="form" method="post" action="php/clientes/agregar.php">
   <div class="form-group">
     <label for="nombre">Nombre</label>
     <input type="text" class="form-control" name="nombre" required>
@@ -46,7 +46,7 @@
   </div><!-- /.modal -->
 
 
-<?php include "php/tabla.php"; ?>
+<?php include "php/clientes/tabla.php"; ?>
 </div>
 </div>
 </div>

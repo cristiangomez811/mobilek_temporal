@@ -1,9 +1,9 @@
 <?php
 
-include "conexion.php";
+include "./php/conexion.php";
 
 $user_id=null;
-$sql1= "select * from clientes where nombre like '%$_GET[s]%' or cedula like '%$_GET[s]%' or telefono like '%$_GET[s]%'";
+$sql1= "select * from clientes";
 $query = $con->query($sql1);
 ?>
 
@@ -20,15 +20,16 @@ $query = $con->query($sql1);
 	<td><?php echo $r["nombre"]; ?></td>
 	<td><?php echo $r["cedula"]; ?></td>
 	<td><?php echo $r["telefono"]; ?></td>
-	<td style="width:150px;">
-		<a href="./editar.php?id=<?php echo $r["id"];?>" class="btn btn-sm btn-warning">Editar</a>
+
+		<td style="width:150px;">
+		<a href="./php/clientesModels/editar.php?id=<?php echo $r["id"];?>" class="btn btn-sm btn-warning">Editar</a>
 		<a href="#" id="del-<?php echo $r["id"];?>" class="btn btn-sm btn-danger">Eliminar</a>
 		<script>
 		$("#del-"+<?php echo $r["id"];?>).click(function(e){
 			e.preventDefault();
 			p = confirm("Estas seguro?");
 			if(p){
-				window.location="./php/eliminar.php?id="+<?php echo $r["id"];?>;
+				window.location="./php/clientes/eliminar.php?id="+<?php echo $r["id"];?>;
 
 			}
 

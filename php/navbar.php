@@ -16,12 +16,6 @@
     <ul class="nav navbar-nav">
       <li><a href="./clientes.php">Clientes</a></li>
     </ul>
-<form class="navbar-form navbar-left" role="search" action="./buscar.php">
-      <div class="form-group">
-        <input type="text" name="s" class="form-control" placeholder="Buscar">
-      </div>
-      <button type="submit" class="btn btn-default">&nbsp;<i class="glyphicon glyphicon-search"></i>&nbsp;</button>
-    </form>
   </div><!-- /.navbar-collapse -->
 </div>
 </nav>

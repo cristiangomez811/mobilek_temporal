@@ -1,5 +1,5 @@
 <?php
-include "conexion.php";
+include "../conexion.php";
 
 $user_id=null;
 $sql1= "select * from clientes where id = ".$_GET["id"];
@@ -16,7 +16,7 @@ while ($r=$query->fetch_object()){
 
 <?php if($cliente !=null):?>
 
-<form role="form" method="post" action="php/actualizar.php">
+<form role="form" method="post" action="../clientes/actualizar.php">
   <div class="form-group">
     <label for="nombre">Nombre</label>
     <input type="text" class="form-control" value="<?php echo $cliente ->nombre; ?>" name="nombre" required>

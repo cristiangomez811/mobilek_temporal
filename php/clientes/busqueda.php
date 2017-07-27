@@ -1,9 +1,9 @@
 <?php
 
-include "conexion.php";
+include "../conexion.php";
 
 $user_id=null;
-$sql1= "select * from clientes";
+$sql1= "select * from clientes where nombre like '%$_GET[s]%' or cedula like '%$_GET[s]%' or telefono like '%$_GET[s]%'";
 $query = $con->query($sql1);
 ?>
 
@@ -20,8 +20,7 @@ $query = $con->query($sql1);
 	<td><?php echo $r["nombre"]; ?></td>
 	<td><?php echo $r["cedula"]; ?></td>
 	<td><?php echo $r["telefono"]; ?></td>
-
-		<td style="width:150px;">
+	<td style="width:150px;">
 		<a href="./editar.php?id=<?php echo $r["id"];?>" class="btn btn-sm btn-warning">Editar</a>
 		<a href="#" id="del-<?php echo $r["id"];?>" class="btn btn-sm btn-danger">Eliminar</a>
 		<script>
@@ -29,7 +28,7 @@ $query = $con->query($sql1);
 			e.preventDefault();
 			p = confirm("Estas seguro?");
 			if(p){
-				window.location="./php/eliminar.php?id="+<?php echo $r["id"];?>;
+				window.location="eliminar.php?id="+<?php echo $r["id"];?>;
 
 			}
 
