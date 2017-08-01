@@ -18,7 +18,7 @@
       <li><a href="inventario.php">Inventario</a></li>
 
     </ul>
-<form class="navbar-form navbar-left" role="search" action="php/clientesModels/buscar.php">
+<form class="navbar-form navbar-left" role="search" action="php/inventarioModels/buscar.php">
       <div class="form-group">
         <input type="text" name="s" class="form-control" placeholder="Buscar">
       </div>

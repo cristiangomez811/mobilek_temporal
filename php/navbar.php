@@ -14,7 +14,9 @@
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav">
-      <li><a href="./clientes.php">Clientes</a></li>
+      <li><a href="clientes.php">Clientes</a></li>
+      <li><a href="inventario.php">Inventario</a></li>
+
     </ul>
   </div><!-- /.navbar-collapse -->
 </div>
