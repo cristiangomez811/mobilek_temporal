@@ -1,2 +1,2 @@
-# crud-one
-CRUD con PHP y MySQL
+# crud
+CRUD con PHP y MySQL modificado para mobilek
